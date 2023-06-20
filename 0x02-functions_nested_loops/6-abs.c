@@ -3,7 +3,7 @@
  * _abs - computes the absolute value of an integer.
  *@num: function argument.
  *
- *return: Absolute value of number
+ *Return: Absolute value of number
  */
 int _abs(int num)
 {
