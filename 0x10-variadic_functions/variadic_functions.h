@@ -4,7 +4,7 @@
 
 typedef struct my_types
 {
-	char *symbol
+	char *symbol;
 	void (*f)();
 }types_t;
 
