@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdio.h>
 #include "variadic_functions.h"
 
 /**
@@ -11,16 +12,16 @@
 
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list parameter_list;
 	unsigned int index, sum = 0;
+	va_list list;
 
 	if (n == 0)
 		return (0);
-	va_start(parameter_list, n);
+	va_start(list, n);
 	for (index = 0; index < n ; index++)
 	{
-		sum += va_arg(parameter_list, int);
+		sum += va_arg(list, int);
 	}
-	va_end(parameter_list);
+	va_end(list);
 	return (sum);
 }
