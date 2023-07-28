@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
 
@@ -6,19 +5,19 @@
  * free_list - frees list_t
  * @head: the linked list
  *
- * Return: 0
+ * Return: Nothing
  */
-
 void free_list(list_t *head)
 {
-	list_t *my_pointer;
+	list_t *temp;
 
-	while (my_pointer != NULL)
+	while (head)
 	{
-		my_pointer = head->next;
-
-		free(head->str);
-		free(head);
-		my_pointer = head;
+		temp = head;
+		head = head->next;
+		free(temp->str);
+		free(temp);
 	}
+
+	free(head);
 }
