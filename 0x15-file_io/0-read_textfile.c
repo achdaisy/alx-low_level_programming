@@ -19,20 +19,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file = open(filename, O_RDONLY);
 	if (file == -1)
 	{
-		perror("failed to open");
 		return (0);
 	}
 	buf = malloc(sizeof(char) * letters);
 	if (buf == NULL)
 	{
-		perror("Error allocating memory");
 		return (0);
 	}
 	/*reading the file*/
 	rread = read(file, buf, letters);
 	if (rread == -1)
 	{
-		perror("Error reading the file");
 		return (0);
 	}
 	close(file);
