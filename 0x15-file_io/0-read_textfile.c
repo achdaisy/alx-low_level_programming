@@ -35,6 +35,16 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		perror("Error reading the file");
 		return (0);
 	}
+	close(file);
+	if (rread < 0)
+	{
+		free(buf);
+		return (0);
+	}
+	if (!rread)
+	{
+		rread = letters;
+	}
 	/*printing to standard output*/
 	output = write(STDOUT_FILENO, buf, rread);
 	free(buf);
@@ -42,6 +52,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	close(file);
 	return (output);
 }
