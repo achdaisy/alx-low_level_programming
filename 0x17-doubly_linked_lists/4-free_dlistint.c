@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * free_dlistint frees a linked list
+ * free_dlistint - frees a linked list
  *
- * @head - head of the linked list to be freed
+ * @head: head of the linked list to be freed
  * Return: nothing
  */
 
